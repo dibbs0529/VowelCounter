@@ -1,0 +1,95 @@
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.Scanner;
+import java.util.StringTokenizer;
+
+public class Assign3Driver {
+
+	public static void main(String[] args) throws FileNotFoundException{
+		// TODO Auto-generated method stub
+
+		/**
+		 * Make a program to find 
+		 * 1.	Total number of words
+	2.	Total number of lines
+	3.	Total number of blank lines
+	4.	Total number of vowels
+	5.	Total number of characters
+	6.	Histogram depicting vowel usage frequencies
+	7.	Histogram depicting character usage frequencies
+	The histograms, do not allow the maximum length to exceed the width of the display.
+	8.	Create a sorted index of all the words (with length >= 2) and their frequencies.  
+
+		 */
+		
+		
+			
+		
+	//Filename, words, spaces, lines.
+		
+	String filename;
+	System.out.println("Enter file name. ");
+	Scanner keyboard = new Scanner(System.in);
+	filename = keyboard.nextLine();
+	File file = new File(filename);
+	Scanner infile = new Scanner(file);
+	
+	int chars = 0;
+	int spaces = 0;
+	int lines = 0;
+	int words = 0;
+	ArrayList<String> WordArray = new ArrayList<String>();
+	ArrayList<String> LineArray = new ArrayList<String>();
+	ArrayList<Character> CharsArray = new ArrayList<Character>();
+	
+	
+	//This will get the lines.
+	while(infile.hasNextLine()){
+		
+		String currentLine;
+		currentLine = infile.nextLine();
+		LineArray.add(currentLine);
+		
+		
+	
+	//Tokenizer for words.
+	StringTokenizer st = new StringTokenizer(currentLine, " .?!'");
+	while(st.hasMoreTokens()){
+			
+			words++;
+			String nextToke = st.nextToken();
+			WordArray.add(nextToke);
+		
+		
+		for(int i = 0; i <= nextToke.length() - 1; i++){
+		
+		CharsArray.add(nextToke.charAt(i));
+	}
+	}
+	//counter for lines.
+	lines++;
+	}
+	
+	// Check for spaces.
+	for(String space : LineArray){
+		
+		if(space.trim().length() == 0)
+		{
+			//counter for spaces.
+			spaces++;
+			
+		}
+	for(char charz : CharsArray){
+		
+		chars++;
+	}
+	}
+		
+	System.out.println("Lines: " + lines);
+	System.out.println("Words: " + words);
+	System.out.println("Spaces: " + spaces);
+	System.out.
+	
+	}
+	}
